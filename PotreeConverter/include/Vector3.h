@@ -122,6 +122,21 @@ public:
 		// return Vector3<T>(x + right.x, y + right.y, z + right.z);
 	}
 
+	/*!  Arithmetic */
+
+	
+	Vector3<T> operator+(const T &a) const{
+		Vector3<T> n_point(*this);
+		bg::add_value(n_point.m_p, a);
+		return n_point;
+	}
+
+	Vector3<T> operator-(const T &a) const{
+		Vector3<T> n_point(*this);
+		bg::subtract_value(n_point.m_p, a);
+		return n_point;
+	}
+
 	Vector3<T> operator*(const T &a) const{
 		Vector3<T> n_point(*this);
 		bg::multiply_value(n_point.m_p, a);
