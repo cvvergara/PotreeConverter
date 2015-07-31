@@ -29,8 +29,15 @@ public:
 	T x, y, z;
 
         T X() const {return bg::get<0>(m_p);}
-        T Y() const {return bg::get<0>(m_p);}
-        T Z() const {return bg::get<0>(m_p);}
+        T Y() const {return bg::get<1>(m_p);}
+        T Z() const {return bg::get<2>(m_p);}
+        T& X() {return bg::get<0>(m_p);}
+        T& Y() {return bg::get<1>(m_p);}
+        T& Z() {return bg::get<2>(m_p);}
+        void X(T data) { bg::set<0>(m_p, data);}
+        void Y(T data) { bg::set<1>(m_p, data);}
+        void Z(T data) { bg::set<2>(m_p, data);}
+
 
 private:
         // TODO once all foo.x like code are changed to foo.X() then this function can go away
